@@ -58,7 +58,7 @@ class _AddAcreenState extends State<AddAcreen> {
               onPressed: () {
                 addUserData(emailController.text, passwordController.text);
               },
-              child: Text("Login"),
+              child: Text("LoginTest"),
             ),
           ],
         ),
