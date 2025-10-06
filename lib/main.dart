@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_test/firebase_options.dart';
-import 'package:mobile_test/practice%20firebas/add_acreen.dart';
+import 'package:mobile_test/practice%20firebas/get_mothod_single_user_data.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
       home: Builder(
         builder: (context) {
-          return const AddAcreen();
+          return GetMothodSingleUserData();
         },
       ),
     );
