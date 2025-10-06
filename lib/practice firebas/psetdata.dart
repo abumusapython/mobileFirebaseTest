@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_test/practice%20firebas/get_mothod_single_user_data.dart';
 
 class Psetdata extends StatefulWidget {
   const Psetdata({super.key});
@@ -55,6 +56,18 @@ class _PsetdataState extends State<Psetdata> {
                   setUserData(emailController.text, passwordController.text);
                 },
                 child: Text("Set Data"),
+              ),
+              SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GetMothodSingleUserData(),
+                    ),
+                  );
+                },
+                child: Text("Go to get mothod single user data page"),
               ),
             ],
           ),
