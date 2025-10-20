@@ -1,14 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class GetMultipleUserData extends StatefulWidget {
-  const GetMultipleUserData({super.key});
+class GetMultyDataUsingSnapshotListen extends StatefulWidget {
+  const GetMultyDataUsingSnapshotListen({super.key});
 
   @override
-  State<GetMultipleUserData> createState() => _GetMultipleUserDataState();
+  State<GetMultyDataUsingSnapshotListen> createState() =>
+      _GetMultipleUserDataState();
 }
 
-class _GetMultipleUserDataState extends State<GetMultipleUserData> {
+class _GetMultipleUserDataState extends State<GetMultyDataUsingSnapshotListen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -71,13 +72,14 @@ class _GetMultipleUserDataState extends State<GetMultipleUserData> {
 
   Future<void> getMultiUserData() async {
     try {
-      await FirebaseFirestore.instance.collection("userLoginData").get().then((
-        QuerySnapshot snapShot,
-      ) {
-        listOfUserLoginData.clear();
-        listOfUserLoginData.addAll(snapShot.docs);
-        setState(() {});
-      });
+      await FirebaseFirestore.instance
+          .collection("userLoginData")
+          .snapshots()
+          .listen((QuerySnapshot snapShot) {
+            listOfUserLoginData.clear();
+            listOfUserLoginData.addAll(snapShot.docs);
+            setState(() {});
+          });
     } catch (e) {
       print("The error is : ${e}");
     }

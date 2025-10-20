@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_test/practice%20firebas/get_multiple_user_data.dart';
+import 'package:mobile_test/practice%20firebas/delete_data.dart';
 
 class Psetdata extends StatefulWidget {
   const Psetdata({super.key});
@@ -62,12 +62,10 @@ class _PsetdataState extends State<Psetdata> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => GetMultipleUserData(),
-                    ),
+                    MaterialPageRoute(builder: (context) => DeleteData()),
                   );
                 },
-                child: Text("Get Maltile User Data"),
+                child: Text("Delete data"),
               ),
             ],
           ),
